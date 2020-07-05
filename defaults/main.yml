@@ -1,2 +1,9 @@
+### deb-base/defaults/mail.yml
 ---
-# defaults file for deb-base
+
+# Package management
+install_core_packagest: ['sudo', 'locate', 'figlet', 'ssh', 'ufw', 'git']
+base_remove_core_packages: ['firewalld']
+# Configuration
+
+
