@@ -2,8 +2,12 @@
 ---
 
 # Package management
-install_core_packagest: ['sudo', 'locate', 'figlet', 'ssh', 'ufw', 'git']
-base_remove_core_packages: ['firewalld']
+install_core_packages: ['sudo', 'locate', 'figlet', 'ssh', 'ufw', 'git']
+remove_core_packages: ['firewalld']
+
+install_packages: []
+remove_packages: []
+
 # Configuration
 
 

@@ -1,14 +1,25 @@
 ---
 # install file for deb-base
-- name: Install packages | Ensure core packages are installed
+- name: Install | Ensure core packages are installed
   apt:
-    pkg: "{{ install_core_packagest }}"
+    pkg: "{{ install_core_packages }}"
     #pkg: ['git']
     state: present
     update_cache: true
-- name: Install packages | Ensure core packages are removed
+- name: Install | Ensure core packages are removed
   apt:
-    pkg: "{{ base_remove_core_packages }}"
+    pkg: "{{ remove_core_packages }}"
     state: absent
+
+- name: Install | Ensure specified packages are installed
+  apt:
+    pkg: "{{ install_packages }}"
+    state: present
+    update_cache: true
+- name: Install | Ensure specified packages are removed
+  apt:
+    pkg: "{{ remove_packages }}"
+    state: absent
+
 
 
