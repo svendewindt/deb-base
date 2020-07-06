@@ -8,6 +8,10 @@ remove_core_packages: ['firewalld']
 install_packages: []
 remove_packages: []
 
+# Services
+start_services: []
+stop_services: []
+
 # Configuration
 
 
