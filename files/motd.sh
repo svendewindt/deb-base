@@ -14,7 +14,9 @@ is_interactive_shell() {
 }
 
 print_pretty_hostname() {
+  printf "\e[92m"
   figlet "$(hostname)"
+  printf "\e[0m"
 }
 
 print_general_info() {
@@ -61,14 +63,18 @@ print_nic_info() {
   local ip4
   local ip6
 
-  printf '\nInterface\tMAC Address\t\tIPv4 Address\t\tIPv6 Address\n'
+#  printf '\nInterface\tMAC Address\t\tIPv4 Address\t\tIPv6 Address\n'
   for nic in ${interfaces}; do
     mac=$(ip --brief link show dev "${nic}" | awk '{print $3}')
     ip_info=$(ip --brief address show dev "${nic}")
     ip4=$(awk '{print $3}' <<< "${ip_info}")
     ip6=$(awk '{print $4}' <<< "${ip_info}")
 
-    printf '%s\t\t%s\t%s\t\t%s\t\n' "${nic}" "${mac}" "${ip4}" "${ip6}"
+#    printf '%s\t\t%s\t%s\t\t%s\t\n' "${nic}" "${mac}" "${ip4}" "${ip6}"
+    printf '\nInterface\t%s' "${nic}"
+    printf '\n  MAC Address\t%s' "${mac}"
+    printf '\n  IPv4\t\t%s' "${ip4}"
+    printf '\n  IPv6\t\t%s\n' "${ip6}"
   done
 }
 
