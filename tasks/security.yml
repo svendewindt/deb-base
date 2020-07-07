@@ -1,0 +1,12 @@
+---
+# tasks/security file for deb-base
+- name: Security | Allow specified services
+  ufw: 
+    rule: allow
+    name: "{{ item }}"
+  with_items: "{{ firewall_allow_services }}"
+- name: Security | Allow specified ports
+  debug:
+    msg: "{{item.value}} {{item.value.port}} {{item.key}}"
+  with_items: "{{ firewall_allow_ports }}"
+   

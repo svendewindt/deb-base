@@ -12,6 +12,19 @@ remove_packages: []
 start_services: []
 stop_services: []
 
-# Configuration
+# Configuration - SSH defaults
+ssh_protocol_version: 2
+ssh_permitemptypasswords: 'no'
+ssh_ignorerhosts: 'yes'
+ssh_hostbasedauthentication: 'no'
+ssh_rhostsrsaauthentication: 'no' 
 
+# Security
+
+# A service, listed in /etc/services
+firewall_allow_services: []
+# An arry of key value pairs, ie ['port=22 protocol=tcp' ]
+# firewall_allow_ports: []
+selinux_state: enforcing
+selinux_booleans: []
 
