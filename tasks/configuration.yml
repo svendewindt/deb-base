@@ -18,4 +18,29 @@
     owner: root
     group: root
     mode: 0644
-  
+
+- name: Configuration | Copy bashrc file to /etc/skel/.bashrc from template
+  template:
+    src: bashrc.j2
+    dest: /etc/skel/.bashrc
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+- name: Configuration | Copy setbashrc.sh to /etc/profile.d to source the new .bashrc preferences
+  copy:
+    src: setbashrc.sh
+    dest: /etc/profile.d
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: Configuration | Copy vimrc file to /etc/vim/vimrc from template to set preferences for all users
+  template:
+    src: vimrc.j2
+    dest: /etc/vim/vimrc
+    owner: root
+    group: root
+    mode: 0644
+  become: true
