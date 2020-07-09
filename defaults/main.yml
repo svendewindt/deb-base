@@ -1,5 +1,5 @@
-### deb-base/defaults/mail.yml
 ---
+# defaults/main file for deb-base
 
 # Package management
 install_core_packages: ['sudo', 'locate', 'figlet', 'ssh', 'ufw', 'git']
@@ -12,7 +12,13 @@ remove_packages: []
 start_services: []
 stop_services: []
 
-# Configuration - SSH defaults
+# Users
+
+add_groups: []
+remove_groups: []
+add_users: []
+remove_users: []
+
 ssh_protocol_version: 2
 ssh_permitemptypasswords: 'no'
 ssh_ignorerhosts: 'yes'

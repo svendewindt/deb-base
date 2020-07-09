@@ -1,0 +1,23 @@
+---
+# tasks/user file for deb-bas
+- name: Users | Remove users
+  user:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ remove_users }}"
+- name: Users | Remove groups
+  group:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ remove_groups }}"
+
+- name: Users | Add groups
+  group:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ add_groups }}"
+- name: Users | Add users
+  user:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ add_users }}"
