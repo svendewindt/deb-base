@@ -13,12 +13,14 @@ start_services: []
 stop_services: []
 
 # Users
-
 add_groups: []
 remove_groups: []
 add_users: []
 remove_users: []
 
+ssh_keys: []
+
+# Configuration
 ssh_protocol_version: 2
 ssh_permitemptypasswords: 'no'
 ssh_ignorerhosts: 'yes'
@@ -27,6 +29,8 @@ ssh_rhostsrsaauthentication: 'no'
 
 # Security
 
+# Remove unused account, ie games
+remove_unused_accounts: ['games']
 # A service, listed in /etc/services
 firewall_allow_services: []
 # An arry of key value pairs, ie ['port=22 protocol=tcp' ]
