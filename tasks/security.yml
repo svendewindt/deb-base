@@ -6,19 +6,6 @@
     state: absent
   with_items: "{{ remove_unused_accounts }}"
 
-- name: Security | Set SELinux state to ({{ selinux_state }})
-  selinux:
-    policy: default
-    state: "{{ selinux_state }}"
-
-- name: Security | Set SELinux booleans
-  seboolean:
-    name: "{{ item }}"
-    state: true
-    persistemt: true
-  with_items: "{{ selinux_booleans }}"
-  when: selinux_state == 'enforcing' or selinux_state == 'permissive'
-  
 #- name: Security | Allow specified services
 #  ufw: 
 #    rule: allow

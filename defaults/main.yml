@@ -2,8 +2,8 @@
 # defaults/main file for deb-base
 
 # Package management
-install_core_packages: ['sudo', 'selinux-basics', 'python-selinux', 'selinux-policy-default', 'locate', 'figlet', 'ssh', 'ufw', 'git']
-remove_core_packages: ['firewalld', 'apparmor']
+install_core_packages: ['sudo', 'locate', 'figlet', 'ssh', 'ufw', 'git']
+remove_core_packages: ['firewalld', 'apparmor', 'selinux-basics', 'python-selinux', 'selinux-policy-default']
 
 install_packages: []
 remove_packages: []
@@ -33,9 +33,6 @@ ssh_rhostsrsaauthentication: 'no'
 
 # Remove unused account, ie games
 remove_unused_accounts: ['games']
-
-selinux_state: enforcing
-selinux_booleans: []
 
 # A service, listed in /etc/services
 firewall_allow_services: []
