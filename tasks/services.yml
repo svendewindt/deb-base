@@ -1,10 +1,11 @@
 ---
 # tasks/services for deb-base
-- name: Services | Ensure SSH deamon is running
+- name: Services | Ensure core services are running
   systemd:
-    name: ssh
+    name: "{{ item }}"
     enabled: true
     state: started
+  with_items: "{{ start_core_services }}"
 
 - name: Services | Ensure specified services are running
   systemd:
@@ -12,6 +13,13 @@
     enabled: true
     state: started
   with_items: "{{ start_services }}"
+
+- name: Services | Ensure core services are not running
+  systemd:
+    name: "{{ item }}"
+    enabled: false
+    state: stopped
+  with_items: "{{ stop_core_services }}"
 
 - name: Services | Ensure specified services are not running
   systemd:
