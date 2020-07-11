@@ -1,2 +1,7 @@
 ---
 # handlers file for deb-base
+
+- name: restart ntp
+  systemd:
+    name: ntp
+    state: restarted

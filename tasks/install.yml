@@ -6,6 +6,7 @@
     #pkg: ['git']
     state: present
     update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid }}"
 - name: Install | Ensure core packages are removed
   apt:
     pkg: "{{ remove_core_packages }}"
