@@ -2,6 +2,4 @@
 # tasks file for deb-base
 - include_tasks: users.yml
 - include_tasks: install.yml
-- include_tasks: services.yml
 - include_tasks: configuration.yml
-- include_tasks: security.yml

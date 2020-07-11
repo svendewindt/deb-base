@@ -8,12 +8,6 @@ remove_core_packages: ['firewalld', 'apparmor', 'selinux-basics', 'python-selinu
 install_packages: []
 remove_packages: []
 
-# Services
-start_core_services: ['ssh']
-stop_core_services: []
-start_services: []
-stop_services: []
-
 # Users
 add_groups: []
 remove_groups: []
@@ -22,20 +16,8 @@ remove_users: []
 
 ssh_keys: []
 
-# Configuration
-ssh_protocol_version: 2
-ssh_permitemptypasswords: 'no'
-ssh_ignorerhosts: 'yes'
-ssh_hostbasedauthentication: 'no'
-ssh_rhostsrsaauthentication: 'no' 
-
 # Security
 
 # Remove unused account, ie games
 remove_unused_accounts: ['games']
-
-# A service, listed in /etc/services
-firewall_allow_services: []
-# An arry of key value pairs, ie ['port=22 protocol=tcp' ]
-# firewall_allow_ports: []
 
