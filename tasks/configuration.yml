@@ -1,11 +1,18 @@
 ---
 # tasks/configuration file for deb-base
 
+- name: Configuration | Ensure ntp deamon is running
+  systemd:
+    name: ntp
+    state: started
+    enabled: true
+
 - name: Configuration | Set MotD requirements
   apt:
     pkg: 'figlet'
     state: present
     update_cache: true
+  when: custom_motd
 - name: Configuration | Set MotD
   copy:
     src: motd.sh
@@ -13,6 +20,7 @@
     owner: root
     group: root
     mode: 0644
+  when: custom_motd
 
 - name: Configuration | Copy bashrc file to /etc/skel/.bashrc from template
   template:
@@ -22,6 +30,7 @@
     group: root
     mode: 0644
   become: true
+  when: custom_bashrc
 - name: Configuration | Copy setbashrc.sh to /etc/profile.d to source the new .bashrc preferences
   copy:
     src: setbashrc.sh
@@ -30,6 +39,7 @@
     group: root
     mode: 0644
   become: true
+  when: custom_bashrc
 
 - name: Configuration | Copy vimrc file to /etc/vim/vimrc from template to set preferences for all users
   template:
@@ -39,3 +49,4 @@
     group: root
     mode: 0644
   become: true
+  when: custom_vimrc
