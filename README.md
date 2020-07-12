@@ -22,14 +22,14 @@ None of the variables is mandatory.
 | ---				| ---					| ---						 		|
 | apt_update_cache		| 3600					| apt cache expiration, default 3600 seconds			|
 | install_core_packages		| ['sudo', 'ntp', 'locate', 'git', 'jq']| installs default packages					|
-| remove_core_packages		| []					| removes default packages (none)				|
-| install_packages		| []					| packages to install						|
-| remove_packages		| []					| packages to remove						|
-| add_groups			| []					| groups to add							|
-| remove_groups			| []					| groups to remove						|
-| add_users			| []					| users to add							|
-| remove_users			| []					| users to remove						|
-| ssh_keys			| []					| ssh_keys to add. note: the user must already exist		|
+| remove_core_packages		| [ ]					| removes default packages (none)				|
+| install_packages		| [ ]					| packages to install						|
+| remove_packages		| [ ]					| packages to remove						|
+| add_groups			| [ ]					| groups to add							|
+| remove_groups			| [ ]					| groups to remove						|
+| add_users			| [ ]					| users to add							|
+| remove_users			| [ ]					| users to remove						|
+| ssh_keys			| [ ]					| ssh_keys to add. note: the user must already exist		|
 | timezone			| Europe/Brussels			| sets the timezoneurope/Brussels				|
 | custom_motd			| true					| sets a custom message of the day				|
 | custom_bashrc			| true					| sets a custom bashrd, default					|
