@@ -1,5 +1,7 @@
 # Read me
 
+[![Build Status](https://travis-ci.org/svendewindt/ansible-role-deb-base.svg?branch=master)](https://travis-ci.org/svendewindt/ansible-role-deb-base)
+
 ## Deb-Base
 
 This is a role to setup a Debian like system with a basic configuration.
