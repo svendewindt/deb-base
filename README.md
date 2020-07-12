@@ -44,7 +44,7 @@ With this role it is easy to create users and groups.
 
 An example of users
 
-```bash
+```yaml
 add_users:
       - username: 'johndoe'
         comment: 'John Doe'
@@ -58,7 +58,7 @@ The password should be set to a SHA-512 hash, starting with `&6&`. An easy way t
 
 To set the SSH key for a user, make sure the user exists and set the key like this
 
-```bash
+```yaml
  ssh_keys:
       - user: johndoe
         key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoZlYxAdDmfcjnwiKyyTceK2ldPsV2KzG3EEDy9o8a7f7GiKfNpM/U3ZN4eFHK8DUoHlG+GGmKjvJ207VPsUQK0obi/7snaPu19m1wcoqnluaY2jcsTSiIHBFn+aVDWKNhc+UzbjZ+zFcHKqF0NIr1HaEpz4RV0N19UeyiIeqX7RpamkQX1MBTAHbQcBFB6eHJte9iWOpmMBmNManvU0rSZYWmdQzvK8+SFfHFB/93K1Cl4MLwG6gRfqGCmwgGmUiSgzG48uBa8N+cQCJie6ikbkKPV109kGVsnufx1kF/ka5/cgaABaxsKBXVxnpojUsFI1E6jS8lM5VZW32K23rB johndoe@PC-jd'
@@ -81,17 +81,30 @@ A custom message of the day will be shown at login showing the name of the machi
 
 This role will set some colorfull aliases in bashrc and set a colorfull vimrc to increase readability.
 
-## Dependencies
+## Example
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```yaml
+---
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - svendewindt/deb-base
+  vars:
+    install_packages: ['apache2']
+    remove_packages: []
+    add_users:
+      - username: 'johndoe'
+        comment: 'John Doe'
+        groups:
+          - 'IT'
+          - 'Admins'
+        password: '$6$mlO/SXHhYGMSKKIF$13slgnS8BV62QAuIVD19EAV1rINCLQ3OQbil6hkPOv9D19J8sAU1xv.msIfHSpA8P3tr.Eln2I6GuRUQ1ePwN0'
+    ssh_keys:
+      - user: svdw
+        key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoZlYxAdDmfcjnwiKyyTceK2ldPsV2KzG3EEDy9o8a7f7GiKfNpM/U3ZN4eFHK8DUoHlG+GGmKjvJ207VPsUQK0obi/7snaPu19m1wcoqnluaY2jcsTSiIHBFn+aVDWKNhc+UzbjZ+zFcHKqF0NIr1HaEpz4RV0N19UeyiIeqX7RpamkQX1MBTAHbQcBFB6eHJte9iWOpmMBmNManvU0rSZYWmdQzvK8+SFfHFB/93K1Cl4MLwG6gRfqGCmwgGmUiSgzG48uBa8N+cQCJie6ikbkKPV109kGVsnufx1kF/ka5/cgaABaxsKBXVxnpojUsFI1E6jS8lM5VZW32K23rB johndoe@PC-JD'
+```
 
-Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
 License
 
