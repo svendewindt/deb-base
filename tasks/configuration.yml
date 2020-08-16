@@ -1,20 +1,17 @@
 ---
 # tasks/configuration file for deb-base
-
 - name: Configuration | Ensure ntp deamon is running
   systemd:
     name: ntp
     state: started
     enabled: true
-
 - name: Configuration | Set time zone to {{ timezone }}
   file:
-    src: /usr/share/zoneinfo/{{timezone}}
+    src: /usr/share/zoneinfo/{{ timezone }}
     dest: /etc/localtime
     state: link
     force: true
   notify: restart ntp
-
 - name: Configuration | Set MotD requirements
   apt:
     pkg: 'figlet'
@@ -29,7 +26,6 @@
     group: root
     mode: 0644
   when: custom_motd
-
 - name: Configuration | Copy bashrc file to /etc/skel/.bashrc from template
   template:
     src: bashrc.j2
@@ -48,7 +44,6 @@
     mode: 0644
   become: true
   when: custom_bashrc
-
 - name: Configuration | Copy vimrc file to /etc/vim/vimrc from template to set preferences for all users
   template:
     src: vimrc.j2

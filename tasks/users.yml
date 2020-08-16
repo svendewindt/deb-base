@@ -15,7 +15,6 @@
   set_fact:
     add_groups: "{{ add_groups  }} + {{ item.groups|default([]) }}"
   with_items: "{{ add_users }}"
-
 - name: Users | Add groups
   group:
     name: "{{ item }}"
