@@ -3,7 +3,6 @@
 - name: Install | Ensure core packages are installed
   apt:
     pkg: "{{ install_core_packages }}"
-    #pkg: ['git']
     state: present
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid }}"
@@ -17,6 +16,7 @@
     pkg: "{{ install_packages }}"
     state: present
     update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid }}"
 - name: Install | Ensure specified packages are removed
   apt:
     pkg: "{{ remove_packages }}"
