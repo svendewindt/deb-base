@@ -20,7 +20,7 @@ ssh_keys: []
 # Configuration
 timezone: Europe/Brussels
 custom_motd: true
-custom_bashrc: true
-custom_vimrc: true
+custom_bashrc: false
+custom_vimrc: false
 
 

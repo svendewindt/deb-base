@@ -34,8 +34,8 @@ None of the variables is mandatory.
 | ssh_keys			| [ ]					| ssh_keys to add. note: the user must already exist		|
 | timezone			| Europe/Brussels			| sets the timezoneurope/Brussels				|
 | custom_motd			| true					| sets a custom message of the day				|
-| custom_bashrc			| true					| sets a custom bashrd, default					|
-| custom_vimrc			| true 					| sets a custom vimrc						|
+| custom_bashrc			| false					| sets a custom bashrd, default					|
+| custom_vimrc			| false					| sets a custom vimrc						|
 
 ### Managing users
 
@@ -72,11 +72,11 @@ Some core packages will be installed by default. I need them on every machine. T
 
 The ntp deamon will be installed and set to run automatically. The timezone will be set to Europe/Brussels by default. To find a list of possible timezones, run `ls /usr/share/zoneinfo`.
 
-## Set message of the day
+### Set message of the day
 
 A custom message of the day will be shown at login showing the name of the machine and some interesting statistics.
 
-## Set custom bashrc and vimrc
+### Set custom bashrc and vimrc
 
 This role will set some colorfull aliases in bashrc and set a colorfull vimrc to increase readability.
 
@@ -105,9 +105,7 @@ This role will set some colorfull aliases in bashrc and set a colorfull vimrc to
 
 
 
-License
-
-MIT
+License: MIT
 
 Author Information
 
