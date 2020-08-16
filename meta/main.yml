@@ -9,17 +9,15 @@ galaxy_info:
   platforms:
   - name: Debian
     versions:
-    - 9
-    - 10
+    - all
   - name: Ubuntu
     versions:  
-    - 16
-    - 18
-    - 20 
+    - Focal
+    - Bionic
+    - Xenial
   galaxy_tags:
   - base
   - users
   - groups
   - timezone
 dependencies: []
-
