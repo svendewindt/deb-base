@@ -12,6 +12,7 @@ galaxy_info:
     - 9
     - 10
   - name: Ubuntu
+    versions:  
     - 16
     - 18
     - 20 
