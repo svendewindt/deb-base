@@ -3,4 +3,4 @@
   remote_user: root
   become: true
   roles:
-    - ansible-role-deb-base
+    - deb-base
