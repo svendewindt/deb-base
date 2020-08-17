@@ -22,5 +22,3 @@ timezone: Europe/Brussels
 custom_motd: true
 custom_bashrc: false
 custom_vimrc: false
-
-
