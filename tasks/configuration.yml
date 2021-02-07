@@ -3,7 +3,7 @@
 
 - name: Configuration | Ensure ntp deamon is running
   systemd:
-    name: systemd-timesyncd
+    name: ntp
     state: started
     enabled: true
 
@@ -13,7 +13,7 @@
     dest: /etc/localtime
     state: link
     force: true
-  notify: restart systemd-timesyncd
+  notify: restart ntp
 
 - name: Configuration | Set MotD requirements
   apt:
