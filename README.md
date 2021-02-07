@@ -87,7 +87,7 @@ This role will set some colorfull aliases in bashrc and set a colorfull vimrc to
 - hosts: 127.0.0.1
   connection: local
   roles:
-    - svendewindt/deb-base
+    - svendewindt.deb_base
   vars:
     install_packages: ['apache2']
     remove_packages: []
