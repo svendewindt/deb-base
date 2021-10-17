@@ -25,7 +25,7 @@
 - name: Configuration | Set MotD
   copy:
     src: motd.sh
-    dest: /etc/update-motd.d/dynamicmotd.sh
+    dest: /etc/profile.d/dynamicmotd.sh
     owner: root
     group: root
     mode: 0644
