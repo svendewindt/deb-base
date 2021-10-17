@@ -30,6 +30,7 @@
     comment: "{{ item.comment|default('') }}"
     groups: "{{ ','.join(item.groups) if item.groups is defined else [] }}"
     password: "{{ item.password|default('!!') }}"
+    shell: /bin/bash
   with_items: "{{ add_users }}"
 
 - name: Users | Set SSH keys
