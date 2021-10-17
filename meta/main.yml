@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: deb-base
+  role_name: deb_base
   author: Sven de Windt
   company: RunIt
   description: Ansible role for basic setup of a server with Debian based distribution.
